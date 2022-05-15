@@ -15,7 +15,7 @@ export default {
 			</h2>
 
 			<assignment-tags 
-				v-model="currentTag"
+				v-model:currentTag="currentTag"
 				:initial-tags="assignments.map(a => a.tag)"
 			/>
 
@@ -27,7 +27,7 @@ export default {
 				></assignment>
 			</ul>
 		</section>
-	`,
+	`,	// explicitly define name of v-model
 
 	props: {
 		assignments: Array,
