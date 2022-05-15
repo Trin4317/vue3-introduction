@@ -14,7 +14,11 @@ export default {
 				<span>({{ assignments.length }})</span>
 			</h2>
 
-			<assignment-tags :initial-tags="assignments.map(a => a.tag)" />
+			<assignment-tags 
+				:initial-tags="assignments.map(a => a.tag)" 
+				:current-tag="currentTag"
+				@change="currentTag = $event"
+			/>
 
 			<ul class="border border-gray-600 divide-y divide-gray-600 mt-6">
 				<assignment
