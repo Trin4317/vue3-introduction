@@ -37,15 +37,18 @@ export default {
 
 	data() {
 		return {
-			currentTag: ''
+			currentTag: 'all'
 		}
 	},
 
 	computed: {
 		tags() {
-			return new Set(this.assignments.map(a => a.tag));
+			return ['all', ...new Set(this.assignments.map(a => a.tag))];
 		},
 		filteredAssignments() {
+			if (this.currentTag === 'all') {
+				return this.assignments
+			}
 			return this.assignments.filter(a => a.tag === this.currentTag);
 		}
 	}
