@@ -2,7 +2,7 @@ export default {
 	template: `
 		<div class="flex gap-2">
 			<button 
-				@click="$emit('change', tag)"
+				@click="$emit('update:currentTag', tag)"
 				v-for="tag in tags" 
 				class="border rounded px-1 py-px text-xs"
 				:class="{
@@ -10,7 +10,7 @@ export default {
 				}"
 			>{{ tag }}</button>
 		</div>
-	`,
+	`,	// name of the event must be '[update]:[v-model's prop name]'
 
 	props: {
 		initialTags: Array,
