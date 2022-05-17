@@ -15,7 +15,7 @@ export default {
 					<span>({{ assignments.length }})</span>
 				</h2>
 
-				<button v-show="canToggle">&times;</button>
+				<button v-show="canToggle" @click="$emit('toggle')">&times;</button>
 			</div>
 
 			<assignment-tags 
