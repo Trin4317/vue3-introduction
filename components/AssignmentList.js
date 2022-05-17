@@ -26,6 +26,8 @@ export default {
 					:assignment="assignment"
 				></assignment>
 			</ul>
+
+			<slot></slot>
 		</section>
 	`,	// explicitly define name of v-model
 
