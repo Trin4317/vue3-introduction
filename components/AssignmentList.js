@@ -9,10 +9,14 @@ export default {
 
 	template: `
 		<section v-show="assignments.length" class="w-60">
-			<h2 class="font-bold mb-2">
-				{{ title }}
-				<span>({{ assignments.length }})</span>
-			</h2>
+			<div class="flex justify-between items-start">
+				<h2 class="font-bold mb-2">
+					{{ title }}
+					<span>({{ assignments.length }})</span>
+				</h2>
+
+				<button v-show="canToggle">&times;</button>
+			</div>
 
 			<assignment-tags 
 				v-model:currentTag="currentTag"
@@ -33,7 +37,8 @@ export default {
 
 	props: {
 		assignments: Array,
-		title: String
+		title: String,
+		canToggle: { type: Boolean, default: false}
 	},
 
 	data() {
