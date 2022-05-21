@@ -36,7 +36,7 @@ export default {
 			<slot></slot>
 
 			<template v-slot:footer>
-				footer
+				{{ footer }}
 			</template>
 			
 		</Panel>
@@ -45,7 +45,8 @@ export default {
 	props: {
 		assignments: Array,
 		title: String,
-		canToggle: { type: Boolean, default: false}
+		canToggle: { type: Boolean, default: false},
+		footer: String
 	},
 
 	data() {

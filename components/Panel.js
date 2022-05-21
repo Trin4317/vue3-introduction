@@ -11,7 +11,7 @@ export default {
 
 			<slot name="default"></slot>
 
-			<footer v-if="$slots.footer" class="border-gray-600 border-t mt-4 pt-4 text-xs">
+			<footer v-if="$slots.footer" class="border-gray-600 border-t mt-4 pt-4 text-xs text-center">
 				<slot name="footer"></slot>
 			</footer>
 		</div>
